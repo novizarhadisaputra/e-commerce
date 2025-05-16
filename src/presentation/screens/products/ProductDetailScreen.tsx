@@ -23,7 +23,7 @@ const ProductDetailScreen: React.FC<Props> = ({ navigation, route }) => {
         data
     } = useQuery({
         queryKey: ['product', route.params.id],
-        queryFn: ({ pageParam }) => ProductUseCase.fetchById(route.params.id),
+        queryFn: () => ProductUseCase.fetchById(route.params.id),
     })
 
     if (isLoading) return <ActivityIndicator size={'large'} />;
@@ -80,7 +80,7 @@ const ProductDetailScreen: React.FC<Props> = ({ navigation, route }) => {
                 <Text style={tw`font-semibold text-base text-black capitalize`}>
                     {'description'}
                 </Text>
-                <Text style={tw`font-regular text-xs text-black capitalize`}>
+                <Text style={tw`font-medium text-xs text-black capitalize`}>
                     {data?.description}
                 </Text>
             </View >

@@ -1,11 +1,12 @@
 import React from 'react';
-import { KeyboardTypeOptions, TextInput } from 'react-native';
+import { KeyboardTypeOptions, StyleProp, TextInput, TextStyle } from 'react-native';
+import tw from '../../core/libs/tailwind';
 
 interface Props {
     isPassword?: boolean;
     placeholder?: string;
     onChangeText?: ((text: string) => void);
-    className?: string;
+    style?: StyleProp<TextStyle>;
     keyboardType?: KeyboardTypeOptions;
     autoCapitalize?: "none" | "sentences" | "words" | "characters" | undefined;
     autoCorrect?: boolean;
@@ -16,22 +17,21 @@ const Input: React.FC<Props> = ({
     isPassword = false,
     placeholder,
     onChangeText,
-    className,
+    style,
     keyboardType = 'default',
     autoCapitalize = 'none',
     autoCorrect = false,
 }) => {
     return (
-        // <TextInput
-        //     secureTextEntry={isPassword}
-        //     placeholder={placeholder}
-        //     onChangeText={onChangeText}
-        //     keyboardType={keyboardType}
-        //     className={`border-b text-base font-normal text-black border-gray-700 py-4 ${className ? className : ''}`}
-        //     autoCapitalize={autoCapitalize}
-        //     autoCorrect={autoCorrect}
-        // />
-        <></>
+        <TextInput
+            secureTextEntry={isPassword}
+            placeholder={placeholder}
+            onChangeText={onChangeText}
+            keyboardType={keyboardType}
+            style={[tw`border-b text-base font-normal text-black border-gray-700 py-4`, style]}
+            autoCapitalize={autoCapitalize}
+            autoCorrect={autoCorrect}
+        />
     )
 }
 

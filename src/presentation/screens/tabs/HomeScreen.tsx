@@ -34,7 +34,7 @@ const HomeScreen: React.FC = () => {
     const products = data?.pages.flatMap(p => p.products) ?? [];
 
     return (
-        <View style={tw`bg-white flex-1`}>
+        <View style={tw.style(`bg-white flex-1`, { paddingTop: top })}>
             <View style={tw`flex-row items-center mt-5 mx-4 gap-x-2`}>
                 {/* Avatar */}
                 <View style={tw`bg-gray-500 h-12 w-12 rounded-full justify-center items-center`}>

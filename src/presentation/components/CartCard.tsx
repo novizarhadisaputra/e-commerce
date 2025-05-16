@@ -51,13 +51,13 @@ const CartCard: React.FC<Props> = ({ data }) => {
                         $ {data.product.price}
                     </Text>
                     <View style={tw` flex-row items-center gap-x-3`}>
-                        <TouchableOpacity onPress={() => handleUpdateItem('minus')} style={tw` p-2 bg-purple-600 rounded-full`}>
+                        <TouchableOpacity onPress={() => handleUpdateItem('minus')} style={tw`p-2 bg-purple-600 rounded-full`}>
                             <Minus size={16} color={AppColors.white} />
                         </TouchableOpacity>
-                        <Text style={tw` text-black font-semibold text-sm`}>
+                        <Text style={tw`text-black font-semibold text-sm`}>
                             {data.quantity}
                         </Text>
-                        <TouchableOpacity onPress={() => handleUpdateItem('plus')} style={tw` p-2 bg-purple-600 rounded-full`}>
+                        <TouchableOpacity onPress={() => handleUpdateItem('plus')} style={tw`p-2 bg-purple-600 rounded-full`}>
                             <Plus size={16} color={AppColors.white} />
                         </TouchableOpacity>
                     </View>
