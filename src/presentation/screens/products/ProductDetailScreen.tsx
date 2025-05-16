@@ -5,6 +5,7 @@ import { ActivityIndicator, Alert, Text, TouchableOpacity, useWindowDimensions, 
 import Animated from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ProductUseCase } from '../../../application/useCases/ProductUseCase';
+import tw from '../../../core/libs/tailwind';
 import { AppColors } from '../../../core/themes/colors';
 import Button from '../../components/Button';
 import { useCart } from '../../hooks/useCart';
@@ -36,63 +37,62 @@ const ProductDetailScreen: React.FC<Props> = ({ navigation, route }) => {
     }
 
     return (
-        <View className='flex-1 bg-white'>
+        <View style={tw`flex-1 bg-white`}>
             <Animated.Image
                 source={{ uri: route.params.thumbnail }}
-                style={{ width: width, height: 401 + top }}
-                className={'bg-gray-300'}
+                style={[tw`bg-gray-300`, { width: width, height: 401 + top }]}
                 resizeMode={'contain'}
                 sharedTransitionTag="tag"
             />
 
             {/* Top navigation */}
-            <View className='absolute w-full flex-row items-center justify-between px-4 py-5' style={{ marginTop: top }}>
-                <TouchableOpacity onPress={() => navigation.canGoBack() ? navigation.goBack() : navigation.navigate('Main', { screen: 'Home' })} className='p-3 bg-gray-100 rounded-full items-center justify-center'>
+            <View style={[tw`absolute w-full flex-row items-center justify-between px-4 py-5`, { marginTop: top }]}>
+                <TouchableOpacity onPress={() => navigation.canGoBack() ? navigation.goBack() : navigation.navigate('Main', { screen: 'Home' })} style={tw`p-3 bg-gray-100 rounded-full items-center justify-center`}>
                     <ArrowLeft size={24} />
                 </TouchableOpacity>
-                <TouchableOpacity className='p-3 bg-gray-100 rounded-full items-center justify-center'>
+                <TouchableOpacity style={tw`p-3 bg-gray-100 rounded-full items-center justify-center`}>
                     <Heart size={24} />
                 </TouchableOpacity>
-            </View>
+            </View >
 
             {/* Title and reviews */}
-            <View className='flex-row items-center justify-between mx-4'>
-                <View className='gap-y-2.5'>
-                    <Text className='font-semibold mt-2'>
+            < View style={tw`flex-row items-center justify-between mx-4`}>
+                <View style={tw`gap-y-2.5`}>
+                    <Text style={tw`font-semibold mt-2`}>
                         {data?.brand}
                     </Text>
-                    <View className='flex-row items-center gap-x-2'>
+                    <View style={tw`flex-row items-center gap-x-2`}>
                         <Star
                             fill={AppColors.orange['400']}
                             color={AppColors.orange['400']}
                         />
-                        <Text className='text-black text-xs font-semibold'>
+                        <Text style={tw`text-black text-xs font-semibold`}>
                             {data?.reviews && (Math.round(data.reviews.reduce((total, next) => total + next.rating, 0) / data.reviews.length)) + ' (' + data.reviews.length + ' reviews)'}
                         </Text>
                     </View>
                 </View>
-                <Text className='text-blue-500 text-base font-semibold'>
+                <Text style={tw`text-blue-500 text-base font-semibold`}>
                     {'$'}{data?.price ?? 0}
                 </Text>
-            </View>
+            </View >
             {/* Description */}
-            <View className='mx-4 mt-5 gap-y-2'>
-                <Text className='font-semibold text-base text-black capitalize'>
+            < View style={tw`mx-4 mt-5 gap-y-2`}>
+                <Text style={tw`font-semibold text-base text-black capitalize`}>
                     {'description'}
                 </Text>
-                <Text className='font-regular text-xs text-black capitalize'>
+                <Text style={tw`font-regular text-xs text-black capitalize`}>
                     {data?.description}
                 </Text>
-            </View>
+            </View >
 
-            <View className='absolute bottom-0 px-4 flex-row gap-x-2' style={{ paddingBottom: bottom }}>
+            <View style={[tw`absolute bottom-0 px-4 flex-row gap-x-2`, { paddingBottom: bottom }]}>
                 <Button
                     text={'buy now'}
-                    textClassName='capitalize'
-                    className='flex-auto'
+                    textStyle={tw`capitalize`}
+                    style={tw`flex-auto`}
                 />
-                <TouchableOpacity onPress={handleAddToCart} className='py-3 px-12'>
-                    <ShoppingCart className='' />
+                <TouchableOpacity onPress={handleAddToCart} style={tw`py-3 px-12`}>
+                    <ShoppingCart />
                 </TouchableOpacity>
             </View>
         </View>

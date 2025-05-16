@@ -1,22 +1,23 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { StyleProp, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
+import tw from '../../core/libs/tailwind';
 
 interface Props {
-    className?: string;
-    textClassName?: string;
+    style?: StyleProp<ViewStyle>;
+    textStyle?: StyleProp<TextStyle>;
     text?: string;
     onPress?(): void;
 }
 
 const Button: React.FC<Props> = ({
-    className,
-    textClassName,
+    style,
+    textStyle,
     text,
     onPress
 }) => {
     return (
-        <TouchableOpacity onPress={onPress} className={`p-4 w-full rounded-full bg-purple-600 items-center justify-center ${className ? className : ''}`}>
-            <Text className={`text-white text-center text-base ${textClassName ? textClassName : ''}`}>
+        <TouchableOpacity onPress={onPress} style={[tw`p-4 w-full rounded-full bg-purple-600 items-center justify-center`, style]}>
+            <Text style={[tw`text-white text-center text-base`, textStyle]}>
                 {text}
             </Text>
         </TouchableOpacity>

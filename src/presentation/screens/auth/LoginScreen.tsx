@@ -1,5 +1,6 @@
 import React from 'react'
 import { View } from 'react-native'
+import tw from '../../../core/libs/tailwind'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 import { useAuth } from '../../hooks/useAuth'
@@ -21,8 +22,8 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
     }
 
     return (
-        <View className='flex-1 justify-center items-center bg-white px-10'>
-            <View className='w-full gap-y-4 mb-10'>
+        <View style={tw`flex-1 justify-center items-center bg-white px-10`}>
+            <View style={tw`w-full gap-y-4 mb-10`}>
                 <Input
                     placeholder={'Email'}
                     onChangeText={setEmail}

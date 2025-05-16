@@ -22,15 +22,16 @@ const Input: React.FC<Props> = ({
     autoCorrect = false,
 }) => {
     return (
-        <TextInput
-            secureTextEntry={isPassword}
-            placeholder={placeholder}
-            onChangeText={onChangeText}
-            keyboardType={keyboardType}
-            className={`border-b text-base font-normal text-black border-gray-700 py-4 ${className ? className : ''}`}
-            autoCapitalize={autoCapitalize}
-            autoCorrect={autoCorrect}
-        />
+        // <TextInput
+        //     secureTextEntry={isPassword}
+        //     placeholder={placeholder}
+        //     onChangeText={onChangeText}
+        //     keyboardType={keyboardType}
+        //     className={`border-b text-base font-normal text-black border-gray-700 py-4 ${className ? className : ''}`}
+        //     autoCapitalize={autoCapitalize}
+        //     autoCorrect={autoCorrect}
+        // />
+        <></>
     )
 }
 

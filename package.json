@@ -20,7 +20,6 @@
     "axios": "^1.9.0",
     "caniuse-lite": "^1.0.30001718",
     "lucide-react-native": "^0.510.0",
-    "nativewind": "^4.1.23",
     "react": "19.0.0",
     "react-native": "0.79.2",
     "react-native-gesture-handler": "^2.25.0",
@@ -34,6 +33,7 @@
     "react-native-svg": "^15.12.0",
     "react-native-svg-transformer": "^1.5.1",
     "tailwindcss": "^3.4.17",
+    "twrnc": "^4.7.0",
     "uuid": "^11.1.0",
     "zustand": "^5.0.4"
   },

@@ -4,6 +4,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { AppColors } from '../../core/themes/colors';
 import { Cart } from '../../domain/models/Cart';
 import { useCart } from '../hooks/useCart';
+import tw from '../../core/libs/tailwind';
 
 interface Props {
     data: Cart;
@@ -26,18 +27,18 @@ const CartCard: React.FC<Props> = ({ data }) => {
     }
 
     return (
-        <View className='bg-gray-100 p-3 flex-row rounded-lg gap-x-3'>
+        <View style={tw` bg-gray-100 p-3 flex-row rounded-lg gap-x-3`}>
             <Image
                 source={{ uri: data.product.thumbnail }}
-                className='h-28 w-32 bg-gray-300 rounded-lg'
+                style={tw` h-28 w-32 bg-gray-300 rounded-lg`}
             />
-            <View className='flex-auto'>
-                <View className='flex-row items-start justify-between'>
-                    <View className='gap-y-1'>
-                        <Text className='font-semibold text-sm text-black'>
+            <View style={tw` flex-auto`}>
+                <View style={tw` flex-row items-start justify-between`}>
+                    <View style={tw` gap-y-1`}>
+                        <Text style={tw` font-semibold text-sm text-black`}>
                             {data.product.brand}
                         </Text>
-                        <Text className='font-semibold text-sm text-gray-500 capitalize'>
+                        <Text style={tw` font-semibold text-sm text-gray-500 capitalize`}>
                             {data.product.category}
                         </Text>
                     </View>
@@ -45,18 +46,18 @@ const CartCard: React.FC<Props> = ({ data }) => {
                         <Trash2 color={AppColors.red[500]} />
                     </TouchableOpacity>
                 </View>
-                <View className='flex-row items-center flex-auto justify-between'>
-                    <Text className='font-semibold text-sm text-black'>
+                <View style={tw` flex-row items-center flex-auto justify-between`}>
+                    <Text style={tw` font-semibold text-sm text-black`}>
                         $ {data.product.price}
                     </Text>
-                    <View className='flex-row items-center gap-x-3'>
-                        <TouchableOpacity onPress={() => handleUpdateItem('minus')} className='p-2 bg-purple-600 rounded-full'>
+                    <View style={tw` flex-row items-center gap-x-3`}>
+                        <TouchableOpacity onPress={() => handleUpdateItem('minus')} style={tw` p-2 bg-purple-600 rounded-full`}>
                             <Minus size={16} color={AppColors.white} />
                         </TouchableOpacity>
-                        <Text className='text-black font-semibold text-sm'>
+                        <Text style={tw` text-black font-semibold text-sm`}>
                             {data.quantity}
                         </Text>
-                        <TouchableOpacity onPress={() => handleUpdateItem('plus')} className='p-2 bg-purple-600 rounded-full'>
+                        <TouchableOpacity onPress={() => handleUpdateItem('plus')} style={tw` p-2 bg-purple-600 rounded-full`}>
                             <Plus size={16} color={AppColors.white} />
                         </TouchableOpacity>
                     </View>
