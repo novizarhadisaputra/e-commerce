@@ -8,7 +8,7 @@ import { ProductUseCase } from '../../../application/useCases/ProductUseCase';
 import { AppColors } from '../../../core/themes/colors';
 import ProductCard from '../../components/ProductCard';
 import { ProductStackScreenProps } from '../../navigation/types';
-import tw from '../../../core/libs/tailwind';
+import tw from '../../../core/themes/tailwind';
 
 type Props = ProductStackScreenProps<'ProductList'>;
 

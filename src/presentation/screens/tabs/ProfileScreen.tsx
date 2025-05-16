@@ -1,7 +1,7 @@
 import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import tw from '../../../core/libs/tailwind';
+import tw from '../../../core/themes/tailwind';
 import Button from '../../components/Button';
 import { useAuth } from '../../hooks/useAuth';
 import { MainTabScreenProps } from '../../navigation/types';

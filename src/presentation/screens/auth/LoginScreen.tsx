@@ -1,6 +1,7 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import { View } from 'react-native'
-import tw from '../../../core/libs/tailwind'
+import tw from '../../../core/themes/tailwind'
 import Button from '../../components/Button'
 import Input from '../../components/Input'
 import { useAuth } from '../../hooks/useAuth'
@@ -9,6 +10,7 @@ import { AuthStackScreenProps } from '../../navigation/types'
 type Props = AuthStackScreenProps<'Login'>;
 
 const LoginScreen: React.FC<Props> = ({ navigation }) => {
+    const { t } = useTranslation();
     const [email, setEmail] = React.useState('');
     const [password, setPassword] = React.useState('');
     const { login } = useAuth();
@@ -37,7 +39,7 @@ const LoginScreen: React.FC<Props> = ({ navigation }) => {
                 />
             </View>
             <Button
-                text={'Login'}
+                text={t('login')}
                 onPress={handleLogin}
             />
 

@@ -4,7 +4,7 @@ import { Image, Text, TouchableOpacity, View } from 'react-native';
 import { AppColors } from '../../core/themes/colors';
 import { Cart } from '../../domain/models/Cart';
 import { useCart } from '../hooks/useCart';
-import tw from '../../core/libs/tailwind';
+import tw from '../../core/themes/tailwind';
 
 interface Props {
     data: Cart;

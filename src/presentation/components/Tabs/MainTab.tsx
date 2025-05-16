@@ -4,7 +4,7 @@ import React from 'react'
 import { TouchableOpacity, View } from 'react-native'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import { MainTabParamList } from '../../navigation/types'
-import tw from '../../../core/libs/tailwind'
+import tw from '../../../core/themes/tailwind'
 
 const HIDDEN_SCREENS: (keyof MainTabParamList)[] = ['Products', 'Cart'];
 

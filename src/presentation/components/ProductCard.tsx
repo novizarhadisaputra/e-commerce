@@ -3,7 +3,7 @@ import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 import Animated from 'react-native-reanimated';
-import tw from '../../core/libs/tailwind';
+import tw from '../../core/themes/tailwind';
 import { Product } from '../../domain/models/Product';
 import { MainTabParamList } from '../navigation/types';
 

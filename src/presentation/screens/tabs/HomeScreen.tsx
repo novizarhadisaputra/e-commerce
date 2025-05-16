@@ -7,7 +7,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ProductUseCase } from '../../../application/useCases/ProductUseCase';
 import ProductCard from '../../components/ProductCard';
 import { useAuth } from '../../hooks/useAuth';
-import tw from '../../../core/libs/tailwind';
+import tw from '../../../core/themes/tailwind';
 
 const HomeScreen: React.FC = () => {
     const { top } = useSafeAreaInsets();

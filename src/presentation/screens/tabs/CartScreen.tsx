@@ -3,7 +3,7 @@ import React from 'react';
 import { TouchableOpacity, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { EmptyCart } from '../../../assets/svgs';
-import tw from '../../../core/libs/tailwind';
+import tw from '../../../core/themes/tailwind';
 import { AppColors } from '../../../core/themes/colors';
 import Button from '../../components/Button';
 import CartCard from '../../components/CartCard';

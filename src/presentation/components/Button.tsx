@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleProp, Text, TextStyle, TouchableOpacity, ViewStyle } from 'react-native';
-import tw from '../../core/libs/tailwind';
+import tw from '../../core/themes/tailwind';
 
 interface Props {
     style?: StyleProp<ViewStyle>;

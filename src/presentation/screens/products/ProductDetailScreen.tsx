@@ -5,7 +5,7 @@ import { ActivityIndicator, Alert, Text, TouchableOpacity, useWindowDimensions, 
 import Animated from 'react-native-reanimated';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { ProductUseCase } from '../../../application/useCases/ProductUseCase';
-import tw from '../../../core/libs/tailwind';
+import tw from '../../../core/themes/tailwind';
 import { AppColors } from '../../../core/themes/colors';
 import Button from '../../components/Button';
 import { useCart } from '../../hooks/useCart';

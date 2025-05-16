@@ -5,6 +5,8 @@ import { User } from '../../domain/models/User'
 const storage = new MMKV()
 
 export const MMKVStorage = {
+    setLanguage: (key: string, lang: string) => storage.set(key, lang),
+    getLanguage: (key: string) => storage.getString(key),
     setUser: (user: User) => storage.set('user', JSON.stringify(user)),
     getUser: (): User | null => {
         const data = storage.getString('user')
